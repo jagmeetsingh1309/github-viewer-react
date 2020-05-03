@@ -11,6 +11,9 @@ const Wrapper = styled.div`
     transform: translate(0,-100px);
     border-radius: 5px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+    @media(max-width:500px){
+        transform: none;
+    }
 `;
 
 class PieChart extends React.Component{

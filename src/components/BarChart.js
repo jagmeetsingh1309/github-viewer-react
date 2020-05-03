@@ -11,6 +11,9 @@ const Wrapper = styled.div`
         text-decoration: dashed underline;
     }
     box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+    @media(max-width:500px){
+        transform: none;
+    }
 `;
 
 
@@ -31,11 +34,11 @@ class BarChart extends React.Component{
 
         const svg = d3.select(this.chartRef.current)
             .append('svg')
-                .attr('width', 400)
+                .attr('width', this.chartRef.current.offsetWidth)
                 .attr('height',400);
         
         const graph = svg.append('g')
-            .attr('width', 350)
+            .attr('width', this.chartRef.current.offsetWidth-50)
             .attr('height', 350)
             .attr('transform','translate(50,0)');
 
@@ -48,7 +51,7 @@ class BarChart extends React.Component{
             .domain([d3.max(data, d => d.stargazers_count ),0]);
 
         const x = d3.scaleBand()
-            .range([0,350])
+            .range([0,this.chartRef.current.offsetWidth-50])
             .domain(data.map(item => item.name))
             .paddingInner(0.2)
             .paddingOuter(0.2);

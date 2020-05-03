@@ -6,7 +6,7 @@ import SearchComponent from './SearchComponent';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>
           <Route path="/" exact component={SearchComponent} />
           <Route path="/search/:username" component={Home} />

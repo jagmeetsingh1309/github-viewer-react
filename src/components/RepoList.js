@@ -6,9 +6,12 @@ import FilterComponent from './FilterComponent';
 import { FlexContainer } from './elements/Flex';
 
 const Wrapper = styled.div`
-    padding: 1rem 4rem;
+    padding: 0 2rem;
     background-color: #EEEEEE;
     margin-top: -75px;
+    @media(max-width:500px){
+        margin-top: 0;
+    }
 `;
 
 const GridContainer = styled.div`

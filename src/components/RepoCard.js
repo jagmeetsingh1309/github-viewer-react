@@ -22,6 +22,9 @@ const Card = styled.div`
     .lead{
         color: #626262;
     }
+    @media(max-width:500px){
+        grid-column: span 12;
+    }
 `;
 
 const RepoCard = props => {
